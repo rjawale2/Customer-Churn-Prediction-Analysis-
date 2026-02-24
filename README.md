@@ -70,11 +70,17 @@ Models were evaluated using:
 
 ## Results Summary
 
-- Best performing model: *(update with your best model)*
-- ROC-AUC Score: *(add value)*
-- Key churn drivers identified: *(add 2–3 features)*
+The final Random Forest model was selected due to its strong churn detection capability under class imbalance. Using a tuned probability threshold (0.35), the model achieved approximately 72% accuracy while maintaining high churn recall (~0.87), meaning it successfully captures most true churners for proactive retention. Precision is lower, reflecting a deliberate tradeoff to prioritize identifying at-risk customers over minimizing false positives. ROC-AUC (~0.86) indicates strong ranking ability, and PR-based evaluation further supports robustness for imbalanced churn prediction.
 
-Business insight: Customers with shorter tenure and month-to-month contracts show significantly higher churn probability.
+Business insight: 
+
+Target retention outreach by risk score (top deciles): Focus offers/calls on the top ~20–35% highest predicted churn probabilities to capture most churners while controlling operational cost.
+
+Contract strategy: If month-to-month contract is a top driver, prioritize incentives to move customers to longer-term contracts.
+
+Price/charge sensitivity: If monthly charges/total charges contribute strongly, test tiered discounts or bundled plans for high-charge segments.
+
+Tenure-based interventions: If churn is highest at low tenure, deploy early-life onboarding programs (first 30–90 days) and proactive support to reduce early churn.
 
 ---
 
@@ -86,8 +92,4 @@ Business insight: Customers with shorter tenure and month-to-month contracts sho
 - Matplotlib
 - Seaborn
 - Scikit-learn
-- XGBoost (if used)
 
----
-
-## Repository Structure
